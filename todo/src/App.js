@@ -4,7 +4,14 @@ import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+      return JSON.parse(savedTodos);
+    } else {
+      return [];
+    }
+  });
   const [todo, setTodo] = useState("");
 
   const addTodo = () => {
@@ -13,12 +20,15 @@ function App() {
 
       setTodo("");
     }
+    localStorage.setItem("todos", JSON.stringify(todos));
   };
+
   const removeTodo = (text) => {
     const newTodos = todos.filter((todo) => {
       return todo !== text;
     });
     setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(todos));
   };
 
   return (
