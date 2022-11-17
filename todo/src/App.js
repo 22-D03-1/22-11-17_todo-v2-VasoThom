@@ -24,9 +24,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Todo APP</h1>
-        <TodoInput todo={todo} setTodo={setTodo} addTodo={addTodo} />
-        <TodoList list={todos} remove={removeTodo} />
+        <div className="container">
+          <h1 className="App-title">Todo APP</h1>
+          <TodoInput todo={todo} setTodo={setTodo} addTodo={addTodo} />
+          <TodoList list={todos} remove={removeTodo} />
+        </div>
       </header>
     </div>
   );

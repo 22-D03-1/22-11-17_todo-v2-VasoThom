@@ -6,9 +6,11 @@ export default function TodoList({ list, remove }) {
       {list?.length > 0 ? (
         <ul>
           {list.map((entry, index) => (
-            <div>
+            <div className="todolist">
               <li key={index}>{entry}</li>
-              <button onClick={() => remove(entry)}>Delete</button>
+              <button className="buttonList" onClick={() => remove(entry)}>
+                Delete
+              </button>
             </div>
           ))}
         </ul>

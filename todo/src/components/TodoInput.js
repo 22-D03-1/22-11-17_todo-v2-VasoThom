@@ -12,7 +12,9 @@ export default function TodoInput({ todo, setTodo, addTodo }) {
           console.log(e.target.value);
         }}
       />
-      <button onClick={addTodo}>Add</button>
+      <button className="addbutton" onClick={addTodo}>
+        Add
+      </button>
     </div>
   );
 }
