@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
@@ -20,8 +20,11 @@ function App() {
 
       setTodo("");
     }
-    localStorage.setItem("todos", JSON.stringify(todos));
   };
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const removeTodo = (text) => {
     const newTodos = todos.filter((todo) => {
