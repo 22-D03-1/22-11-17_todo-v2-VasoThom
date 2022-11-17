@@ -23,6 +23,7 @@ function App() {
   };
 
   useEffect(() => {
+    //  otan exo todo list xrisimopoiw useffect kai to getItem paei sto useState
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
